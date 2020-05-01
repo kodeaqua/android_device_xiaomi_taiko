@@ -212,7 +212,8 @@ PRODUCT_PACKAGES += \
     WifiResOverlayMT6789
 
 PRODUCT_PACKAGES += \
-    LineageApertureOverlayMT6789
+    LineageApertureOverlayMT6789 \
+    LineageSDKOverlayMT6789
 
 # Radio
 PRODUCT_PACKAGES += \
