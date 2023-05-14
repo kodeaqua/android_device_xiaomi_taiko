@@ -108,6 +108,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
+# Overlays
+PRODUCT_PACKAGES += \
+    WifiResOverlayMT6789
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6789 \
