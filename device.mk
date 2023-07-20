@@ -112,6 +112,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FrameworksResOverlayMT6789 \
     TetheringResOverlayMT6789 \
+    SettingsOverlayMT6789 \
     WifiResOverlayMT6789
 
 # Rootdir
