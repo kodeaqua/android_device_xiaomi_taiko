@@ -72,6 +72,9 @@ ro.vendor.smvr.p2batch.vga=8
 ro.vendor.smvr.p2batch.hd=4
 persist.vendor.sys.mtkaal.function=0
 
+# DRM
+ro.netflix.bsp_rev=MTK6789-35965-1
+
 # Media
 media.c2.dmabuf.padding=3072
 ro.vendor.jpeg_decode_sw_opt=1
