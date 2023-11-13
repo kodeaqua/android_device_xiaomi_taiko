@@ -5,7 +5,6 @@
 
 DEVICE_PATH := device/xiaomi/emerald
 
-
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
