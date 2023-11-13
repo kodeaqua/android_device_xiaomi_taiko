@@ -43,6 +43,9 @@ PRODUCT_PACKAGES += \
     fstab.mt6789 \
     fstab.mt6789.vendor_ramdisk
 
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/init/init.recovery.mt6789.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6789.rc
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
