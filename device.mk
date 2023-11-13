@@ -38,6 +38,11 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.mt6789 \
+    fstab.mt6789.vendor_ramdisk
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
