@@ -66,6 +66,8 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    vendor/lineage/config/device_framework_matrix.xml
 
 # Kernel
 TARGET_NO_KERNEL_OVERRIDE := true
