@@ -110,6 +110,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    TetheringResOverlayMT6789 \
     WifiResOverlayMT6789
 
 # Rootdir
