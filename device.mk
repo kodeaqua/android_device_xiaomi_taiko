@@ -110,6 +110,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    FrameworksResOverlayMT6789 \
     TetheringResOverlayMT6789 \
     WifiResOverlayMT6789
 
