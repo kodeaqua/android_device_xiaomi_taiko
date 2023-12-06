@@ -125,6 +125,7 @@ PRODUCT_PACKAGES += \
     FrameworksResOverlayMT6789 \
     TetheringResOverlayMT6789 \
     SettingsOverlayMT6789 \
+    SystemUIOverlayMT6789 \
     WifiResOverlayMT6789
 
 # Radio
