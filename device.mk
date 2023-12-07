@@ -116,6 +116,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0.vendor:64
 
+# IFAA manager
+PRODUCT_PACKAGES += \
+    IFAAService
+
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
