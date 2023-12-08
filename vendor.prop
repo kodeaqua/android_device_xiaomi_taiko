@@ -121,6 +121,7 @@ ro.vendor.mtk_data_config=1
 ro.vendor.mtk_mobile_management=1
 
 # Media
+debug.stagefright.c2inputsurface=-1
 media.c2.dmabuf.padding=3072
 ro.vendor.jpeg_decode_sw_opt=1
 ro.vendor.mtk_mvpu_security_support=0
