@@ -42,6 +42,10 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+PRODUCT_PACKAGES += \
+    create_pl_dev \
+    create_pl_dev.recovery
+
 # Audio
 $(call soong_config_set,android_hardware_audio,run_64bit,true)
 
