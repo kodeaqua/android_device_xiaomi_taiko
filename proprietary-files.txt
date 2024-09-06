@@ -210,7 +210,7 @@ vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so;SYMLINK=
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.1-impl.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so
-vendor/lib64/libSQLiteModule_VER_ALL.so
+vendor/lib64/libSQLiteModule_VER_ALL.so;DISABLE_CHECKELF
 vendor/lib64/libanc_dc_base.so
 vendor/lib64/libanc_hdr.so
 vendor/lib64/libanc_hdr_adapter_AncSuperNightLite.so
@@ -685,15 +685,15 @@ vendor/lib64/libmialgoengine.so
 vendor/lib64/libmialgoengine2.so
 vendor/lib64/libmi_bokehpre.so
 vendor/lib64/libminiui.so
-vendor/lib64/libMiVideoFilter.so
+vendor/lib64/libMiVideoFilter.so;DISABLE_CHECKELF
 vendor/lib64/libmorpho_HDSR.so
 vendor/lib64/libmorpho_HdrChecker.so
 vendor/lib64/libmorpho_ImageRefiner.so
 vendor/lib64/libmorpho_ImageRefinerLite.so
-vendor/lib64/libmorpho_Ldc.so
+vendor/lib64/libmorpho_Ldc.so;DISABLE_CHECKELF
 vendor/lib64/libmorpho_MFNR.so
 vendor/lib64/libmorpho_ldc_preview.so
-vendor/lib64/libmorpho_video_stabilizer.so
+vendor/lib64/libmorpho_video_stabilizer.so;DISABLE_CHECKELF
 vendor/lib64/libmpbase.so
 vendor/lib64/libmtkcam.MITPS.so
 vendor/lib64/libmtkcam_pipelinepolicy-aov.so
@@ -703,7 +703,7 @@ vendor/lib64/libpixelflinger.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
 vendor/lib64/librgbwlightsensor.so
-vendor/lib64/libTrueSight.so
+vendor/lib64/libTrueSight.so;DISABLE_CHECKELF
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
 vendor/lib64/libJpgEncPipe.so
@@ -714,7 +714,7 @@ vendor/lib64/libwa_dof.so
 vendor/lib64/libwa_rtdof.so
 vendor/lib64/mt6789/lib3a.ae.core.so;SYMLINK=vendor/lib64/lib3a.ae.core.so
 vendor/lib64/mt6789/lib3a.ae.so;SYMLINK=vendor/lib64/lib3a.ae.so
-vendor/lib64/mt6789/lib3a.ae.stat.so;SYMLINK=vendor/lib64/lib3a.ae.stat.so
+vendor/lib64/mt6789/lib3a.ae.stat.so;SYMLINK=vendor/lib64/lib3a.ae.stat.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/lib3a.af.assist.so;SYMLINK=vendor/lib64/lib3a.af.assist.so
 vendor/lib64/mt6789/lib3a.af.assist.utils.so;SYMLINK=vendor/lib64/lib3a.af.assist.utils.so
 vendor/lib64/mt6789/lib3a.af.core.so;SYMLINK=vendor/lib64/lib3a.af.core.so
@@ -760,7 +760,7 @@ vendor/lib64/mt6789/libSonyIMX386PdafLibrary.so;SYMLINK=vendor/lib64/libSonyIMX3
 vendor/lib64/mt6789/libSonyIMX386PdafLibraryWrapper.so;SYMLINK=vendor/lib64/libSonyIMX386PdafLibraryWrapper.so
 vendor/lib64/mt6789/libSonyIMX519PdafLibrary.so;SYMLINK=vendor/lib64/libSonyIMX519PdafLibrary.so
 vendor/lib64/mt6789/libSonyIMX519PdafLibraryWrapper.so;SYMLINK=vendor/lib64/libSonyIMX519PdafLibraryWrapper.so
-vendor/lib64/mt6789/libaaa_ltm.so;SYMLINK=vendor/lib64/libaaa_ltm.so
+vendor/lib64/mt6789/libaaa_ltm.so;SYMLINK=vendor/lib64/libaaa_ltm.so;DISABLE_CHECKELF
 vendor/lib64/mt6789/libaaa_ltmx.so;SYMLINK=vendor/lib64/libaaa_ltmx.so
 vendor/lib64/mt6789/libaiawb_moon.so;SYMLINK=vendor/lib64/libaiawb_moon.so
 vendor/lib64/mt6789/libaiawb_p1ggm.so;SYMLINK=vendor/lib64/libaiawb_p1ggm.so
