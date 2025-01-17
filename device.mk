@@ -103,7 +103,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.xiaomi
+    android.hardware.light-service.lineage
 
 # Rootdir
 PRODUCT_PACKAGES += \
