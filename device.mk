@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/xiaomi/emerald
+KERNEL_PATH := $(DEVICE_PATH)-kernel
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -23,8 +26,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
-DEVICE_PATH := device/xiaomi/emerald
-KERNEL_PATH := $(DEVICE_PATH)-kernel
+# Boot Control
+PRODUCT_PACKAGES += \
+    android.hardware.boot-service.default \
+    android.hardware.boot-service.default_recovery
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
