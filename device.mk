@@ -54,7 +54,17 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6789 \
-    fstab.mt6789.vendor_ramdisk
+    fstab.mt6789.vendor_ramdisk \
+    fstab.zram \
+    init.batterysecret.rc \
+    init.cgroup.rc \
+    init.connectivity.rc \
+    init.modem.rc \
+    init.mt6789.rc \
+    init.mt6789.usb.rc \
+    init.mtkgki.rc \
+    init.sensor_2_0.rc \
+    ueventd.mt6789.rc
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/init/init.recovery.mt6789.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6789.rc
@@ -99,6 +109,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.opengles.deqp.level-2021-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2021-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
+
+# Modules
+PRODUCT_PACKAGES += \
+    init.insmod.sh \
+    init.insmod.mt6789.cfg
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
