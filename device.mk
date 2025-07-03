@@ -15,6 +15,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 DEVICE_PATH := device/xiaomi/emerald
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := false
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
