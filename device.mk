@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit generic_ramdisk product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+
 DEVICE_PATH := device/xiaomi/emerald
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
