@@ -5,6 +5,20 @@
 
 DEVICE_PATH := device/xiaomi/emerald
 
+# A/B
+AB_OTA_PARTITIONS += \
+    system \
+    system_ext \
+    product \
+    vendor \
+    vendor_dlkm \
+    odm_dlkm \
+    boot \
+    vendor_boot \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
+
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
