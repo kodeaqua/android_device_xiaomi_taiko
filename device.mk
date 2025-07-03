@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/xiaomi/emerald
+KERNEL_PATH := $(DEVICE_PATH)-kernel
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
