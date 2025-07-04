@@ -67,6 +67,11 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.default \
     android.hardware.boot-service.default_recovery
 
+# ConsumerIR
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl:64 \
+    android.hardware.ir@1.0-service
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \

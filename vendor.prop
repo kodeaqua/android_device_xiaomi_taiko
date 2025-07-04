@@ -25,6 +25,9 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 vendor.bluetooth.ldac.abr=true
 
+# ConsumerIR
+ro.hardware.consumerir=common
+
 # Display
 ro.hardware.egl=meow
 ro.hardware.vulkan=mali
