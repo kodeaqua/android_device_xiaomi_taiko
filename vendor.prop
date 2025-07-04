@@ -7,6 +7,10 @@ ro.vendor.audio.spk.stereo=true
 vendor.audiohal.telephonytx.type=2
 persist.vendor.audio.misound.disable=true
 
+# Bluetooth
+ro.vendor.bt.platform=connac1x
+vendor.bluetooth.ldac.abr=true
+
 # Display
 ro.hardware.egl=meow
 ro.hardware.vulkan=mali
