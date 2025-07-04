@@ -90,9 +90,8 @@ PRODUCT_SHIPPING_API_LEVEL := 33
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-impl.recovery \
-    android.hardware.health@2.1-service
+    android.hardware.health-service.example \
+    android.hardware.health-service.example_recovery
 
 # Rootdir
 PRODUCT_PACKAGES += \
