@@ -1094,10 +1094,6 @@ on property:ro.boot.crash_reason=*
   setprop vendor.minidump.crash_reason ${ro.boot.crash_reason}
 # N6R code for HQ_435374 by p-zhangshuaibing at 2024/12/04 end
 
-# FPSGO FBT Game
-on boot
-    insmod /vendor/lib/modules/fpsgo.ko
-
 # VSIM service (vendor OSI)
 service osi /system/bin/osi
     class main
