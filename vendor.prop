@@ -70,6 +70,10 @@ ro.vendor.mtk_aal_support=1
 debug.mediatek.disp_decompress=1
 ro.vendor.smvr.p2batch.vga=8
 ro.vendor.smvr.p2batch.hd=4
+persist.vendor.sys.mtkaal.function=0
+
+# Sensors
+ro.vendor.mtk.sensor.support=yes
 
 # SurfaceFlinger
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
