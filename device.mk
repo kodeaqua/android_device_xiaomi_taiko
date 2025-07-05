@@ -204,6 +204,11 @@ PRODUCT_PACKAGES += \
     android.hardware.usb.gadget@1.0.vendor \
     android.hardware.usb.gadget@1.1.vendor
 
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service.xiaomi_mt6789
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     wpa_supplicant \
