@@ -55,7 +55,9 @@ fi
 function blob_fixup {
     case "$1" in
         vendor/lib*/hw/vendor.mediatek.hardware.pq@2.15-impl.so)
-            "$PATCHELF" --replace-needed "libutils.so" "libutils-v32.so" "$2"
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "android.hardware.sensors@1.0-convert-shared.so" "${2}"
             ;;
     esac
 }
