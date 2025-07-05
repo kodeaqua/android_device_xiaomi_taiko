@@ -192,6 +192,14 @@ PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mt6789.cfg
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0-subhal-impl-1.0 \
+    android.hardware.sensors-service.xiaomi-multihal
+
+PRODUCT_PACKAGES += \
+    sensors.dynamic_sensor_hal
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
