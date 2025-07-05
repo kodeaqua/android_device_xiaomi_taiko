@@ -86,3 +86,8 @@ debug.sf.high_fps.earlyGl.sf.duration=15800000
 debug.sf.high_fps.earlyGl.app.duration=12000000
 debug.sf.high_fps.hwc.min.duration=8500000
 debug.sf.enable_hwc_vds=0
+
+
+# Wi-Fi
+ro.vendor.wlan.chrdev=wmt_chrdev_wifi
+ro.vendor.wlan.gen=gen4m_6789
