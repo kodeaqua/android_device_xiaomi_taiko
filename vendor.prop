@@ -72,6 +72,12 @@ ro.vendor.smvr.p2batch.vga=8
 ro.vendor.smvr.p2batch.hd=4
 persist.vendor.sys.mtkaal.function=0
 
+# Neural Networks
+debug.mtk_tflite.target_nnapi=29
+ro.vendor.mtk_nn_baseline_support=1
+ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
+ro.vendor.mtk_nn_quant_preferred=1
+
 # Sensors
 ro.vendor.mtk.sensor.support=yes
 
