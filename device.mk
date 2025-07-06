@@ -201,6 +201,10 @@ PRODUCT_PACKAGES += \
     init.insmod.sh \
     init.insmod.mt6789.cfg
 
+# Secure Element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor:64
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-subhal-impl-1.0 \
