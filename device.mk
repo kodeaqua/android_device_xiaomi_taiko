@@ -93,6 +93,17 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl.custom:64 \
     fastbootd
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
+
+ifeq ($(TARGET_HAS_UDFPS),true)
+PRODUCT_PACKAGES += \
+    libudfpshandler
+endif
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.fx.tunnel@1.0.vendor:64
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 
