@@ -11,17 +11,6 @@ import /vendor/etc/init/hw/init.sensor_2_0.rc
 import /vendor/etc/init/hw/init.modem.rc
 # *** DO NOT import the new rc file after this line ***
 
-# Keep debugfs mounted in non-user builds
-on early-init && property:ro.build.type=eng
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-    setprop persist.dbg.keep_debugfs_mounted true
-
-on early-init && property:ro.build.type=userdebug
-    mount debugfs debugfs /sys/kernel/debug
-    chmod 0755 /sys/kernel/debug
-    setprop persist.dbg.keep_debugfs_mounted true
-
 on init
 
 # change lk_env permission
@@ -57,34 +46,13 @@ on charger
     restorecon_recursive /mnt/vendor/nvcfg
     write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
-    # Permissions for System Server and daemons.
-    chown system system /sys/power/autosleep
-    chown system system /sys/power/state
-    chown system system /sys/power/wakeup_count
-    chown radio wakelock /sys/power/wake_lock
-    chown radio wakelock /sys/power/wake_unlock
-    chmod 0660 /sys/power/state
-    chmod 0660 /sys/power/wake_lock
-    chmod 0660 /sys/power/wake_unlock
-    chmod 0660 /sys/power/wakeup_count
-    write /sys/power/pm_freeze_timeout 2000
-
-    #start fuelgauged
-    #start fuelgauged_nvram
-
-    chown system system /sys/class/leds/lcd-backlight/brightness
-    chown system system /sys/class/leds/red/brightness
-    chown system system /sys/class/leds/green/brightness
-
-    start vendor.light-default
-
 
 on fs
     start vendor.boot-hal-1-2
 
     # mount fstab
+    wait_for_prop hwservicemanager.ready "true"
     mount_all --early
-    exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/by-name/userdata
 
 on fs
     # mount rescue
@@ -94,7 +62,6 @@ on fs
 on late-fs
     wait_for_prop hwservicemanager.ready "true"
     mount_all --late
-
 
 on post-fs
 
@@ -132,9 +99,6 @@ on post-fs
 
 on post-fs-data
     wait_for_prop vendor.all.modules.ready 1
-
-    # Disable watermark boost
-    write /proc/sys/vm/watermark_boost_factor 0
 
     # zram
     write /sys/block/zram0/comp_algorithm lz4
@@ -262,8 +226,6 @@ on post-fs-data
     #chmod 666 /dev/mali0
     #chown system graphics /dev/mali
 
-
-
     # Touch Panel
     # chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
@@ -287,17 +249,6 @@ on post-fs-data
     # RTC
     chmod 660 /dev/alarm
     chown root system /dev/alarm
-
-    # M4U
-    #insmod /vendor/lib/modules/m4u.ko
-    #mknod /dev/M4U_device c 188 0
-    chmod 0444 /dev/m4u
-    #chown system media /dev/M4U_device
-    chmod 0640 /proc/m4u
-    chown system media /proc/m4u
-
-    #set mlock limit to infinate (for m4u operation)
-    setrlimit 8 -1 -1
 
     # CMDQ
     chmod 0640 /dev/mtk_mdp
@@ -489,7 +440,6 @@ on post-fs-data
     chown media system /dev/hdmitx
     chmod 0664 /dev/hdmitx
 
-
     # JPEG
     chmod 0666 /proc/mtk_jpeg
 
@@ -601,7 +551,6 @@ on post-fs-data
     chmod 0660 /dev/mtk_dfrc
     chown system graphics /dev/mtk_dfrc
 
-
    #change partition permission
 
     chmod 0640 /mtd@sec_ro
@@ -654,32 +603,15 @@ on post-fs-data
 
     chmod 0666 /dev/exm0
 
-
 	#Thermal
 	mkdir /data/vendor/.tp/ 0775 system system
 	mkdir /data/vendor/thermal/ 0775 system system
-
-    mkdir /data/vendor/thermal/ 0775 system system
-    mkdir /data/vendor/thermal 0771 root system
-    mkdir /data/vendor/thermal/config 0771 root system
-    start mi_thermald
-    chown system system /sys/class/thermal/thermal_message/sconfig
 
     #MCUPM log
     chmod 0620 /sys/class/misc/mcupm/mcupm_mobile_log
     chown root system /sys/class/misc/mcupm/mcupm_mobile_log
     chmod 0440 /dev/mcupm
     chown root system /dev/mcupm
-
-    #EM of MT6360
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmu.5-0034/data
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmic.5-001a/data
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_ldo.5-0064/data
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360-4e/data
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmu.5-0034/reg_addr
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_pmic.5-001a/reg_addr
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360_ldo.5-0064/reg_addr
-    chmod 0664 sys/kernel/debug/rt-regmap/mt6360-4e/reg_addr
 
 	#widevine driver node
 	chmod 0660 /dev/drm_wv
@@ -740,7 +672,6 @@ on boot
     chown radio system /sys/power/tuxonice/do_hibernate
     chmod 0770 /sys/power/tuxonice
     chmod 0220 /sys/power/tuxonice/do_hibernate
-
 
 # Smartbook Handler Framework
     chown system system /sys/power/sb_state
@@ -886,7 +817,6 @@ on property:vold.decrypt=trigger_reset_main
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
 
-
 on property:vold.decrypt=trigger_restart_min_framework
     start msensord
     start permission_check
@@ -898,14 +828,6 @@ on property:vold.decrypt=trigger_restart_framework
 on property:vold.decrypt=trigger_shutdown_framework
     setprop sys.boot_completed 0
     setprop dev.bootcomplete 0
-
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class late_start
-    disabled
-    oneshot
-    keycodes 114 115 116
 
 # end boot time fs tune
 on property:sys.boot_completed=1
@@ -922,166 +844,6 @@ on property:sys.boot_completed=1
     write /sys/block/dm-4/queue/read_ahead_kb 128
     write /sys/block/dm-5/queue/read_ahead_kb 128
 
-
-#service dpfd /vendor/bin/dpfd
-#	user root
-#	group system media
-
-#
-#  External Modme control related services
-#
-
-#
-#  Modem related services (Begin)
-#
-##Add by T.Zh for ppp daemon
-#service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
-#    user root
-#    disabled
-#    oneshot
-#
-##
-#
-#  Modem related services (End)
-#
-
-#add for power-off alarm
-#service poad /vendor/bin/poad
-#    class main
-#    user system
-#    group system
-#    oneshot
-
-#service BGW /vendor/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
-
-# add loghidl client
-service loghidlsysservice /system/bin/loghidlsysservice
-    class main
-    user root
-    group system
-    disabled
-
-# add meta_tst for ATM
-service meta_tst /vendor/bin/meta_tst
-    class core
-    user root
-    group radio gps system wifi audio bluetooth media
-    capabilities NET_RAW NET_ADMIN
-    socket meta-atci stream 660 radio system
-    disabled
-    oneshot
-
-service factory_no_image /vendor/bin/factory
-    user root
-    group radio system wifi media gps audio bluetooth wakelock nfc
-    capabilities BLOCK_SUSPEND NET_RAW NET_ADMIN SYS_ADMIN SYS_BOOT
-    socket factory-atci stream 660 radio system
-    disabled
-    oneshot
-
-# start meta_tst for ATM
-on property:sys.boot_completed=1 && property:ro.boot.atm=enable
-    start meta_tst
-    start loghidlvendorservice
-    start loghidlsysservice
-
-service charge_logger /vendor/bin/charge_logger
-    class main
-    user system
-    group system radio wakelock
-    disabled
-    oneshot
-on property:sys.boot_completed=1
-    start charge_logger
-
 # reset mdmode when modem crash happens in ATM
 on property:vendor.mtk.md1.status=reset
     setprop persist.vendor.atm.mdmode normal
-
-# N6R code for HQ_435374 by p-zhangshuaibing at 2024/12/04 start
-on property:ro.boot.crash_reason=*
-  setprop vendor.minidump.crash_reason ${ro.boot.crash_reason}
-# N6R code for HQ_435374 by p-zhangshuaibing at 2024/12/04 end
-
-# VSIM service (vendor OSI)
-service osi /system/bin/osi
-    class main
-    user root
-    disabled
-    oneshot
-    #seclabel u:r:osi:s0
-
-service mi_thermald /system/vendor/bin/mi_thermald
-    class main
-    user root
-    group system
-    seclabel u:r:mi_thermald:s0
-
-service initprop_bin /system/vendor/bin/initprop_bin
-    class main
-    user root
-    oneshot
-    disabled
-
-on property:vendor.service.nvram_init=Ready
-    start initprop_bin
-
-on property:ro.vendor.oem.sno=*
-    setprop ro.ril.oem.sno ${ro.vendor.oem.sno}
-
-on property:ro.vendor.oem.psno=*
-    setprop ro.ril.oem.psno ${ro.vendor.oem.psno}
-
-#IMEI prop
-on property:ro.vendor.oem.imei=*
-    setprop ro.ril.oem.imei ${ro.vendor.oem.imei}
-    setprop ro.ril.oem.imei1 ${ro.vendor.oem.imei}
-
-on property:ro.vendor.oem.imei2=*
-    setprop ro.ril.oem.imei2 ${ro.vendor.oem.imei2}
-
-# boardid prop
-on property:ro.vendor.boot.hwc=*
-    setprop ro.boot.hwc ${ro.vendor.boot.hwc}
-
-on property:ro.vendor.boot.hwlevel=*
-    setprop ro.boot.hwlevel ${ro.vendor.boot.hwlevel}
-
-on property:ro.vendor.boot.hwversion=*
-    setprop ro.boot.hwversion ${ro.vendor.boot.hwversion}
-
-# btmac wifimac factory_id
-on property:ro.vendor.oem.wifimac=*
-    setprop ro.ril.oem.wifimac ${ro.vendor.oem.wifimac}
-
-on property:ro.vendor.oem.btmac=*
-    setprop ro.ril.oem.btmac ${ro.vendor.oem.btmac}
-
-on property:ro.vendor.ril.factory_id=*
-    setprop ro.ril.factory_id ${ro.vendor.ril.factory_id}
-
-service mishow_start /vendor/bin/sh /vendor/bin/mishow.sh 1
-       class main
-       user system
-       group system
-       disabled
-       oneshot
-       seclabel u:r:mishow:s0
-
-service mishow_stop /vendor/bin/sh /vendor/bin/mishow.sh 0
-       class main
-       user system
-       group system
-       disabled
-       oneshot
-       seclabel u:r:mishow:s0
-
-on property:vendor.charge.mishow.ctl=true
-       start mishow_start
-
-on property:vendor.charge.mishow.ctl=false
-       start mishow_stop
-
