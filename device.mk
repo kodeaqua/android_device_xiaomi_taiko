@@ -121,10 +121,10 @@ PRODUCT_PACKAGES += \
     fstab.mt6789.vendor_ramdisk \
     fstab.zram \
     init.batterysecret.rc \
-    init.cgroup.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6789.rc \
+    init.mt6789.power.rc \
     init.mt6789.usb.rc \
     init.mtkgki.rc \
     init.sensor_2_0.rc \
