@@ -151,7 +151,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := mt6789
 
 # Power
-TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
+TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
