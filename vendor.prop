@@ -128,6 +128,10 @@ telephony.active_modems.max_count=2
 # SOC
 ro.soc.manufacturer=Mediatek
 
+# Fingerprint
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=540|1680|124
+
 # SurfaceFlinger
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true

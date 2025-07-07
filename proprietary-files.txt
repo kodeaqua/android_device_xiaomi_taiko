@@ -168,6 +168,10 @@ vendor/etc/init/hw/init.project.rc
 vendor/etc/cust_color_dsi_n6_41_02_0b_dsc_vdo.xml
 vendor/etc/cust_color_dsi_n6_42_0d_0a_dsc_vdo.xml
 
+# Fingerprint
+vendor/odm/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix.default.so
+vendor/lib64/libgf_hal.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
