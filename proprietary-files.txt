@@ -161,6 +161,9 @@ vendor/etc/misound_res.bin
 vendor/etc/misound_res_headphone.bin
 vendor/etc/misound_res_spk.bin
 
+# Device Project
+vendor/etc/init/hw/init.project.rc
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
