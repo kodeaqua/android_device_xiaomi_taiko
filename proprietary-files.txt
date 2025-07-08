@@ -344,6 +344,18 @@ vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/lib64/libfgauge_gm30.so
 
+# DRM
+vendor/lib64/mediadrm/libwvdrmengine.so
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libwvkeybox.so
+vendor/lib64/libwvkeyboxext.so
+
+# DRM (widevine)
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
+vendor/lib64/libwvhidl.so
+
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.mitee.so
 vendor/lib64/hw/libSoftGatekeeper.so
