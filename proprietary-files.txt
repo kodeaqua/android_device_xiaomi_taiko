@@ -204,6 +204,10 @@ vendor/etc/thermal/thermal_policy_08.conf
 vendor/etc/thermal-videochat.conf
 vendor/etc/thermal-video.conf
 
+# Touchscreen Firmware
+vendor/firmware/gt9916_ts_fw_visionox.bin
+vendor/firmware/goodix_cfg_group.bin
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
 vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
