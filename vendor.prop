@@ -130,7 +130,7 @@ ro.soc.manufacturer=Mediatek
 
 # Fingerprint
 persist.vendor.fingerprint.type=udfps_optical
-persist.vendor.fingerprint.sensor_location=540|1680|124
+persist.vendor.fingerprint.sensor_location=540|2163|93
 
 # SurfaceFlinger
 ro.surface_flinger.primary_display_orientation=ORIENTATION_0
