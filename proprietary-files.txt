@@ -207,6 +207,7 @@ vendor/etc/thermal-video.conf
 # Touchscreen Firmware
 vendor/firmware/gt9916_ts_fw_visionox.bin
 vendor/firmware/goodix_cfg_group.bin
+vendor/firmware/goodix_test_limits_255_VSN.csv
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
