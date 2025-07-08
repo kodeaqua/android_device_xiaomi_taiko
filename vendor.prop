@@ -79,6 +79,21 @@ ro.netflix.bsp_rev=MTK6789-35965-1
 ro.vendor.gps.chrdev=gps_drv_stp
 ro.vendor.mtk_log_hide_gps=1
 
+# IMS
+persist.vendor.anr.enhancement=0
+persist.vendor.ims_support=1
+persist.vendor.mtk_ct_volte_support=3
+persist.vendor.mtk_dynamic_ims_switch=1
+persist.vendor.mtk_wfc_support=1
+persist.vendor.mtk.volte.enable=1
+persist.vendor.vilte_support=1
+persist.vendor.viwifi_support=1
+persist.vendor.volte_support=1
+ro.telephony.iwlan_operation_mode=AP-assisted
+ro.vendor.md_auto_setup_ims=1
+ro.vendor.mtk_data_config=1
+ro.vendor.mtk_mobile_management=1
+
 # Media
 media.c2.dmabuf.padding=3072
 ro.vendor.jpeg_decode_sw_opt=1
