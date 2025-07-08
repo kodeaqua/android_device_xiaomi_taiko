@@ -165,6 +165,8 @@ vendor/etc/misound_res_spk.bin
 vendor/bin/batterysecret
 
 # Display Configs
+vendor/etc/dsi_n6_41_02_0b_dsc_vdo_mi.xml
+vendor/etc/dsi_n6_42_0d_0a_dsc_vdo_mi.xml
 vendor/etc/cust_color_dsi_n6_41_02_0b_dsc_vdo.xml
 vendor/etc/cust_color_dsi_n6_42_0d_0a_dsc_vdo.xml
 
