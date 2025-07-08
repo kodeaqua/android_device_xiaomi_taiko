@@ -102,6 +102,11 @@ PRODUCT_PACKAGES += \
     sensors.mt6789:64 \
     vendor.xiaomi.hardware.fx.tunnel@1.0.vendor:64
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 33
 

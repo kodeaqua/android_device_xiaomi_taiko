@@ -335,6 +335,10 @@ vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/lib64/libfgauge_gm30.so
 
+# Gatekeeper
+vendor/lib64/hw/gatekeeper.mitee.so
+vendor/lib64/hw/libSoftGatekeeper.so
+
 # Media (C2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek-64b.rc
