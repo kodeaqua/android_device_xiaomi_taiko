@@ -179,6 +179,7 @@ PRODUCT_PACKAGES += \
     init.mt6789.power.rc \
     init.mt6789.usb.rc \
     init.mtkgki.rc \
+    init.nfc.rc \
     init.sensor_2_0.rc \
     ueventd.mt6789.rc
 
