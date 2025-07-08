@@ -468,6 +468,15 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex@3.0.so
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 
+# NFC
+vendor/etc/libnfc-nci.conf
+vendor/etc/libnfc-nxp.conf
+vendor/etc/libnfc-tms.conf
+vendor/etc/libnfc-tms_RF.conf:vendor/libnfc-tms_RF.conf
+vendor/etc/libnfc-tms_RF_EC2.conf:vendor/libnfc-tms_RF_EC2.conf
+vendor/etc/libnfc-tms_RF_GB1.conf:vendor/libnfc-tms_RF_GB1.conf
+vendor/lib64/libpn557_fw.so
+
 # Sensors
 vendor/firmware/remoteproc_scp
 vendor/lib64/hw/sensors.mediatek.V2.0.so:vendor/lib64/hw/sensors.mt6789.so
