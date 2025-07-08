@@ -80,9 +80,6 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-ifeq ($(TARGET_HAS_UDFPS),true)
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_udfps.xml
-endif
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
