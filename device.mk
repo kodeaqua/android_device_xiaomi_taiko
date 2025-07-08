@@ -126,6 +126,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-V1-ndk_platform.vendor \
+    android.hardware.security.secureclock-V1-ndk_platform.vendor \
+    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
+    android.hardware.security.rkp-V1-ndk.vendor \
+    lib_android_keymaster_keymint_utils.vendor \
+    libkeymint.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.hardware_keystore.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+
 # Media
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor:64 \
