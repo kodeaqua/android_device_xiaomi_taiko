@@ -54,6 +54,10 @@ fi
 
 function blob_fixup {
     case "$1" in
+        vendor/bin/mnld|\
+        vendor/lib*/libaalservice.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "android.hardware.sensors@1.0-convert-shared.so" "${2}"
         vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b)
             "$PATCHELF" --add-needed "libstagefright_foundation-v33.so" "$2"
             ;;
