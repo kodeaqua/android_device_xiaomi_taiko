@@ -623,6 +623,7 @@ vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 
 # Vibrator firmware
+vendor/firmware/aw8624_rtp.bin
 vendor/firmware/vibrator_firmware_aidl/aw8624_haptic.bin:vendor/firmware/aw8624_haptic.bin
 vendor/firmware/vibrator_firmware_aidl/0_click_P_RTP.bin:vendor/firmware/0_click_P_RTP.bin
 vendor/firmware/vibrator_firmware_aidl/101_offlineCountdown_P_RTP.bin:vendor/firmware/101_offlineCountdown_P_RTP.bin
