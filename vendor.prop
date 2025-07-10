@@ -176,6 +176,7 @@ ro.vendor.num_md_protocol=2
 ro.vendor.radio.max.multisim=dsds
 ro.vendor.sim_me_lock_mode=3
 telephony.active_modems.max_count=2
+ro.vendor.mtk_mipc_support=1
 
 # TEE
 ro.vendor.mtk_microtrust_tee_support=1
