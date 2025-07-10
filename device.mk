@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libudfpshandler \
-    sensors.mt6789:64 \
+    sensors.xiaomi \
     vendor.xiaomi.hardware.fx.tunnel@1.0.vendor:64
 
 # Gatekeeper
