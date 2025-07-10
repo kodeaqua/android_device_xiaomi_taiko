@@ -179,6 +179,7 @@ ro.vendor.sim_me_lock_mode=3
 telephony.active_modems.max_count=2
 ro.vendor.mtk_mipc_support=1
 ro.vendor.mtk_fd_support=1
+import /vendor/etc/rsc/glb/ro.prop
 
 # TEE
 ro.vendor.mtk_microtrust_tee_support=1
