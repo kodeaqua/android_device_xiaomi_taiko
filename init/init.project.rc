@@ -1,3 +1,14 @@
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+
+on post-fs-data
+    chown system system /dev/xiaomi-fp
+    chmod 0644 /dev/xiaomi-fp
+
+#touch
+    chown system system /sys/class/touch/touch_dev/palm_sensor
+
 on post-fs-data
     # Thermal
     mkdir /data/vendor/thermal 0771 root system
@@ -33,15 +44,49 @@ on post-fs-data
     chmod 0660 /dev/BU64745GWZAF
     chown system camera /dev/BU64745GWZAF
 
+    mkdir /data/vendor/camera/ 0777 system camera
+    chmod 777 /mnt/vendor/nvcfg/sensor
+    chmod +r /mnt/vendor/nvcfg/sensor/gyro_cali.json
+    chmod +r /mnt/vendor/nvcfg/sensor/gyro_bias.json
+
+    #SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
     chmod 0660 /dev/spm
     chown system system /dev/spm
 
+    # calibration
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
+    chmod 0777 /mnt/vendor/persist/camera/rear_dc_cal_wt.bin
+    chmod 0777 /data/vendor/camera/rear_dc_cal_wd.bin
+    chmod 0777 /data/vendor/camera/rear_dc_cal_wu.bin
+    restorecon /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
+    restorecon /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
+    mkdir /mnt/vendor/persist 0777 system camera
+    mkdir /mnt/vendor/persist/camera 0777 system camera
+    chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wd.golden
+    chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wu.golden
+    chmod 0777 /vendor/etc/camera/golden_ov13b10_i_ov2180_i.bin
+    chmod 0777 /vendor/etc/camera/golden_ov13b10_i_ov2180_ii.bin
+    chmod 0777 /vendor/etc/camera/golden_ov13b10_ii_ov2180_i.bin
+    chmod 0777 /vendor/etc/camera/golden_ov13b10_ii_ov2180_ii.bin
+    chmod 0777 /data/vendor/camera/golden_rear_dc_cal_wt.bin
+    chmod 0777 /data/vendor/camera/golden_s5k3l6_ii_ov2180_ii.bin
+
+on boot
     # NFC
-    mkdir /data/vendor/nfc 0770 nfc nfc
-    chmod 0660 /dev/nq-nci
+    mkdir /data/vendor/nfc_socket 0770 nfc nfc
+    mkdir /data/vendor 0777 nfc nfc
+    mkdir /data/vendor/nfc 0777 nfc nfc
+    mkdir /data/vendor/nfc/param 0777 nfc nfc
+    chmod 0660 /dev/tms_nfc
+    chown nfc system /dev/tms_nfc
+    chown nfc nfc /sys/nfc/chip_name
+    chmod 0777 /sys/nfc/chip_name
+    chmod 0777 /dev/nq-nci
     chown nfc nfc /dev/nq-nci
-    chmod 0660 /dev/p73
-    chown nfc nfc /dev/p73
 
     # ufscld function permission
     chown root system /sys/devices/platform/soc/11270000.ufshci/ufscld/auto_hibern8_enable
@@ -53,24 +98,38 @@ on post-fs-data
     chown root system /sys/devices/platform/soc/11270000.ufshci/ufscld/trigger_interval
     chmod 664 /sys/devices/platform/soc/11270000.ufshci/ufscld/trigger
 
+#displayfeature
 on boot
-    # Display feature sysfs node
-    chown system system /sys/class/mi_display/disp-DSI-0/disp_param
-    chmod 0664 /sys/class/mi_display/disp-DSI-0/disp_param
-    chown system system /sys/class/mi_display/disp-DSI-0/mipi_rw
-    chmod 0664 /sys/class/mi_display/disp-DSI-0/mipi_rw
-    chown system system /sys/class/mi_display/disp-DSI-0/panel_info
-    chmod 0444 /sys/class/mi_display/disp-DSI-0/panel_info
-    chown system system /sys/class/mi_display/disp-DSI-0/wp_info
-    chmod 0444 /sys/class/mi_display/disp-DSI-0/wp_info
-    chown system system /sys/class/mi_display/disp-DSI-0/dynamic_fps
-    chmod 0444 /sys/class/mi_display/disp-DSI-0/dynamic_fps
-    chown system system /sys/class/mi_display/disp-DSI-0/doze_brightness
-    chmod 0664 /sys/class/mi_display/disp-DSI-0/doze_brightness
-    chown system system /sys/class/mi_display/disp-DSI-0/disp_count
-    chmod 0664 /sys/class/mi_display/disp-DSI-0/disp_count
+    chown system system /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness
+    chmod 0777 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness
+    chmod 0777 /sys/class/mi_display/disp-DSI-0/brightness_clone
     chown system system /sys/class/mi_display/disp-DSI-0/brightness_clone
-    chmod 0664 /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chmod 0777 /dev/mi_display/disp_feature
+    chown system system /dev/mi_display/disp_feature
+    chmod 0777 /sys/class/mi_display/disp-DSI-0/disp_param
+    chown system system /sys/class/mi_display/disp-DSI-0/disp_param
+
+    service sarcalibration /vendor/bin/sns_sensors_test_and_cal -c 72,3,50000000,0
+    class main
+    user root
+    disabled
+    oneshot
+    group root system
+    seclabel u:r:sardiag:s0
+
+# start mmstat
+on property:sys.boot_completed=1
+    mkdir /sys/kernel/tracing/instances/mmstat 711
+    write /sys/kernel/tracing/instances/mmstat/tracing_on 0
+    write /sys/kernel/tracing/instances/mmstat/buffer_size_kb 16
+    write /sys/kernel/tracing/instances/mmstat/events/mmstat/enable 1
+    write /sys/kernel/tracing/instances/mmstat/tracing_on 1
+
+on init
+    service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
 	# camera flash led
 	chown system system /sys/class/flashlight_core/flashlight/flashlight_torch
     chmod 0664 /sys/class/flashlight_core/flashlight/flashlight_torch
