@@ -21,6 +21,13 @@
             <instance>se2</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.vibrator</name>
+        <interface>
+            <name>IVibrator</name>
+            <instance>vibratorfeature</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.bluetooth.audio</name>
         <version>2.0-2</version>
