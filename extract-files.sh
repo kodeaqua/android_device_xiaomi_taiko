@@ -66,6 +66,8 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             "${PATCHELF}" --replace-needed "libsensorndkbridge.so" "android.hardware.sensors@1.0-convert-shared.so" "${2}"
             ;;
+        system_ext/lib64/libsink-mtk.so)
+            "$PATCHELF" --add-needed "libaudioclient_shim.so" "$2"
         vendor/lib*/libmtkcam_stdutils.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
