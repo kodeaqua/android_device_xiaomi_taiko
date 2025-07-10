@@ -71,6 +71,9 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service'): blob_fixup()
         .replace_needed('android.hardware.vibrator-V1-ndk_platform.so', 'android.hardware.vibrator-V1-ndk.so')
         .replace_needed('libutils.so', 'libutils-v32.so'),
+    'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
+        .add_needed('libstagefright_foundation-v33.so')
+        .replace_needed('libalsautils.so', 'libalsautils-v31.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
