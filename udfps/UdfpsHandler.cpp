@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "UdfpsHandler.xiaomi_mt6895"
+#define LOG_TAG "UdfpsHandler.xiaomi_mt6789"
 
 #include <aidl/android/hardware/biometrics/fingerprint/BnFingerprint.h>
 #include <android-base/logging.h>
@@ -73,7 +73,7 @@ static bool readBool(int fd) {
 
 }  // anonymous namespace
 
-class XiaomiMt6895UdfpsHander : public UdfpsHandler {
+class XiaomiMt6789UdfpsHandler : public UdfpsHandler {
   public:
     void init(fingerprint_device_t* device) {
         mDevice = device;
@@ -157,7 +157,7 @@ class XiaomiMt6895UdfpsHander : public UdfpsHandler {
 };
 
 static UdfpsHandler* create() {
-    return new XiaomiMt6895UdfpsHander();
+    return new XiaomiMt6789UdfpsHandler();
 }
 
 static void destroy(UdfpsHandler* handler) {
