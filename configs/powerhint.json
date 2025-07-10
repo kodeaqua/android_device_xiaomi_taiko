@@ -7,10 +7,9 @@
         "9999999999",
         "4266000000",
         "3200000000",
-        "2400000000",
+        "2667000000",
+        "2133000000",
         "1866000000",
-        "1600000000",
-        "1200000000",
         "800000000",
         "0"
       ],
@@ -63,62 +62,52 @@
         "36",
         "37",
         "38",
-        "39",
-        "40",
-        "41",
-        "42",
-        "43",
-        "44"
+        "39"
       ],
       "ResetOnInit": true,
       "DefaultIndex": 0,
       "Comments": [
         "[-1] normal",
-        "[00*] freq: 1100000, volt: 78750, vsram: 78750, posdiv: 1, vaging: 1875, power: 0",
-        "[01*] freq: 1086000, volt: 78750, vsram: 78750, posdiv: 1, vaging: 1875, power: 0",
-        "[02*] freq: 1072000, volt: 78125, vsram: 78125, posdiv: 1, vaging: 1875, power: 0",
-        "[03*] freq: 1058000, volt: 77500, vsram: 77500, posdiv: 1, vaging: 1875, power: 0",
-        "[04*] freq: 1045000, volt: 76875, vsram: 76875, posdiv: 1, vaging: 1875, power: 0",
-        "[05*] freq: 1031000, volt: 76250, vsram: 76250, posdiv: 1, vaging: 1875, power: 0",
-        "[06*] freq: 1017000, volt: 75625, vsram: 75625, posdiv: 1, vaging: 1875, power: 0",
-        "[07*] freq: 1003000, volt: 75000, vsram: 75000, posdiv: 1, vaging: 1875, power: 0",
-        "[08*] freq: 990000, volt: 74375, vsram: 75000, posdiv: 1, vaging: 1875, power: 0",
-        "[09*] freq: 976000, volt: 73750, vsram: 75000, posdiv: 1, vaging: 1875, power: 0",
-        "[10*] freq: 962000, volt: 73750, vsram: 75000, posdiv: 1, vaging: 1875, power: 0",
-        "[11*] freq: 948000, volt: 73125, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[12*] freq: 935000, volt: 72500, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[13*] freq: 921000, volt: 71875, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[14*] freq: 907000, volt: 71250, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[15*] freq: 893000, volt: 70625, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[16*] freq: 880000, volt: 70000, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[17*] freq: 868000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[18*] freq: 857000, volt: 69375, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[19*] freq: 846000, volt: 68750, vsram: 75000, posdiv: 2, vaging: 1875, power: 0",
-        "[20*] freq: 835000, volt: 68125, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[21*] freq: 823000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[22*] freq: 812000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[23*] freq: 801000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[24*] freq: 790000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[25*] freq: 778000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[26*] freq: 767000, volt: 65625, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[27*] freq: 756000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[28*] freq: 745000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[29*] freq: 733000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[30*] freq: 722000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[31*] freq: 711000, volt: 63125, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[32*] freq: 700000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[33*] freq: 674000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[34*] freq: 648000, volt: 61875, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[35*] freq: 622000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 1250, power: 0",
-        "[36*] freq: 596000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[37*] freq: 570000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[38*] freq: 545000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[39*] freq: 519000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[40*] freq: 493000, volt: 59375, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[41*] freq: 467000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[42*] freq: 441000, volt: 58750, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[43*] freq: 415000, volt: 58125, vsram: 75000, posdiv: 2, vaging: 625, power: 0",
-        "[44*] freq: 390000, volt: 57500, vsram: 75000, posdiv: 2, vaging: 625, power: 0"
+        "[0] freq: 852000, volt: 67500, vsram: 75000, posdiv: 2, vaging: 0, power: 1691",
+        "[1] freq: 845000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 0, power: 1638",
+        "[2] freq: 837000, volt: 66875, vsram: 75000, posdiv: 2, vaging: 0, power: 1622",
+        "[3] freq: 830000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 0, power: 1570",
+        "[4] freq: 822000, volt: 66250, vsram: 75000, posdiv: 2, vaging: 0, power: 1554",
+        "[5] freq: 815000, volt: 65625, vsram: 75000, posdiv: 2, vaging: 0, power: 1520",
+        "[6] freq: 807000, volt: 65625, vsram: 75000, posdiv: 2, vaging: 0, power: 1504",
+        "[7] freq: 800000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 0, power: 1455",
+        "[8] freq: 773000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 0, power: 1410",
+        "[9] freq: 747000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 0, power: 1364",
+        "[10] freq: 721000, volt: 65000, vsram: 75000, posdiv: 2, vaging: 0, power: 1319",
+        "[11] freq: 695000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 0, power: 1230",
+        "[12] freq: 668000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 0, power: 1185",
+        "[13] freq: 642000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 0, power: 1141",
+        "[14] freq: 616000, volt: 64375, vsram: 75000, posdiv: 2, vaging: 0, power: 1096",
+        "[15] freq: 590000, volt: 63750, vsram: 75000, posdiv: 2, vaging: 0, power: 1052",
+        "[16] freq: 572000, volt: 63125, vsram: 75000, posdiv: 2, vaging: 0, power: 999",
+        "[17] freq: 555000, volt: 62500, vsram: 75000, posdiv: 2, vaging: 0, power: 948",
+        "[18] freq: 538000, volt: 61875, vsram: 75000, posdiv: 2, vaging: 0, power: 898",
+        "[19] freq: 521000, volt: 61250, vsram: 75000, posdiv: 2, vaging: 0, power: 850",
+        "[20] freq: 504000, volt: 60625, vsram: 75000, posdiv: 2, vaging: 0, power: 804",
+        "[21] freq: 487000, volt: 60000, vsram: 75000, posdiv: 2, vaging: 0, power: 778",
+        "[22] freq: 470000, volt: 59375, vsram: 75000, posdiv: 2, vaging: 0, power: 734",
+        "[23] freq: 453000, volt: 58125, vsram: 75000, posdiv: 2, vaging: 0, power: 674",
+        "[24] freq: 436000, volt: 57500, vsram: 75000, posdiv: 2, vaging: 0, power: 634",
+        "[25] freq: 419000, volt: 56875, vsram: 75000, posdiv: 2, vaging: 0, power: 595",
+        "[26] freq: 402000, volt: 56250, vsram: 75000, posdiv: 2, vaging: 0, power: 572",
+        "[27] freq: 385000, volt: 55625, vsram: 75000, posdiv: 2, vaging: 0, power: 535",
+        "[28] freq: 368000, volt: 55000, vsram: 75000, posdiv: 3, vaging: 0, power: 499",
+        "[29] freq: 351000, volt: 54375, vsram: 75000, posdiv: 3, vaging: 0, power: 465",
+        "[30] freq: 334000, volt: 53750, vsram: 75000, posdiv: 3, vaging: 0, power: 433",
+        "[31] freq: 317000, volt: 52500, vsram: 75000, posdiv: 3, vaging: 0, power: 401",
+        "[32] freq: 304000, volt: 52500, vsram: 75000, posdiv: 3, vaging: 0, power: 381",
+        "[33] freq: 292000, volt: 51875, vsram: 75000, posdiv: 3, vaging: 0, power: 362",
+        "[34] freq: 280000, volt: 51250, vsram: 75000, posdiv: 3, vaging: 0, power: 342",
+        "[35] freq: 268000, volt: 50625, vsram: 75000, posdiv: 3, vaging: 0, power: 315",
+        "[36] freq: 255000, volt: 50625, vsram: 75000, posdiv: 3, vaging: 0, power: 306",
+        "[37] freq: 243000, volt: 50000, vsram: 75000, posdiv: 3, vaging: 0, power: 280",
+        "[38] freq: 231000, volt: 49375, vsram: 75000, posdiv: 3, vaging: 0, power: 263",
+        "[39] freq: 219000, volt: 48750, vsram: 75000, posdiv: 3, vaging: 0, power: 246"
       ]
     },
     {
@@ -128,9 +117,13 @@
         "9999999",
         "2000000",
         "1900000",
+        "1850000",
         "1800000",
+        "1750000",
         "1700000",
+        "1650000",
         "1600000",
+        "1550000",
         "1500000",
         "1450000",
         "1400000",
@@ -149,7 +142,11 @@
         "750000",
         "700000",
         "650000",
-        "500000"
+        "600000",
+        "550000",
+        "500000",
+        "450000",
+        "400000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -161,9 +158,13 @@
         "9999999",
         "2000000",
         "1900000",
+        "1850000",
         "1800000",
+        "1750000",
         "1700000",
+        "1650000",
         "1600000",
+        "1550000",
         "1500000",
         "1450000",
         "1400000",
@@ -182,8 +183,11 @@
         "750000",
         "700000",
         "650000",
+        "600000",
+        "550000",
         "500000",
-        "0"
+        "450000",
+        "400000"
       ],
       "ResetOnInit": true
     },
@@ -192,8 +196,12 @@
       "Path": "/sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq",
       "Values": [
         "9999999",
+        "2300000",
+        "2250000",
         "2200000",
+        "2150000",
         "2100000",
+        "2050000",
         "2000000",
         "1900000",
         "1800000",
@@ -207,7 +215,12 @@
         "1000000",
         "900000",
         "800000",
-        "725000"
+        "700000",
+        "600000",
+        "500000",
+        "400000",
+        "300000",
+        "200000"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
@@ -218,7 +231,9 @@
       "Values": [
         "9999999",
         "2200000",
+        "2150000",
         "2100000",
+        "2050000",
         "2000000",
         "1900000",
         "1800000",
@@ -232,8 +247,12 @@
         "1000000",
         "900000",
         "800000",
-        "725000",
-        "0"
+        "700000",
+        "600000",
+        "500000",
+        "400000",
+        "300000",
+        "200000"
       ],
       "ResetOnInit": true
     },
@@ -247,26 +266,23 @@
       "HoldFd": true
     },
     {
-      "Name": "CDCpuset",
-      "Path": "/dev/cpuset/camera-daemon/cpus",
-      "Values": [
-        "0-5",
-        "6-7",
-        "0-7"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "UclampTAMin",
       "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
       "Values": [
         "0",
-        "25",
-        "40",
         "100"
       ],
       "DefaultIndex": 0,
       "ResetOnInit": true
+    },
+    {
+      "Name": "RestrictedCpuset",
+      "Path": "/dev/cpuset/restricted/cpus",
+      "Values": [
+        "0-3",
+        "0-7"
+      ],
+      "ResetOnInit": false
     },
     {
       "Name": "PowerHALRenderingState",
@@ -298,67 +314,43 @@
         "0,1,2,3,4,5,6,7"
       ],
       "Type": "Property"
-    },
-    {
-      "Name": "PowerHALAudioState",
-      "Path": "vendor.powerhal.audio",
-      "Values": ["AUDIO_STREAMING_LOW_LATENCY", ""],
-      "Type": "Property"
     }
   ],
   "Actions": [
     {
       "PowerHint": "INTERACTION",
-      "Node": "GpuPwrLevel",
-      "Duration": 0,
-      "Value": "7"
-    },
-    {
-      "PowerHint": "INTERACTION",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 0,
-      "Value": "1350000"
+      "Duration": 58,
+      "Value": "1400000"
     },
     {
       "PowerHint": "INTERACTION",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
+      "Duration": 58,
       "Value": "1300000"
     },
     {
-      "PowerHint": "INTERACTION",
-      "Node": "UclampTAMin",
-      "Duration": 0,
-      "Value": "40"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "GpuPwrLevel",
-      "Duration": 0,
-      "Value": "0"
-    },
-    {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMinFreq",
-      "Duration": 4000,
+      "Duration": 1500,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "CPULittleClusterMinFreq",
-      "Duration": 4000,
+      "Duration": 1500,
       "Value": "9999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "MemFreq",
-      "Duration": 4000,
+      "Duration": 1500,
       "Value": "9999999999"
     },
     {
       "PowerHint": "LAUNCH",
       "Node": "UclampTAMin",
-      "Duration": 4000,
+      "Duration": 1500,
       "Value": "100"
     }, 
     {
@@ -422,22 +414,16 @@
       "Value": "51"
     },
     {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "PowerHALAudioState",
+      "PowerHint": "DEVICE_IDLE",
+      "Node": "RestrictedCpuset",
       "Duration": 0,
-      "Value": "AUDIO_STREAMING_LOW_LATENCY"
+      "Value": "0-3"
     },
     {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "CPULittleClusterMinFreq",
+      "PowerHint": "DISPLAY_INACTIVE",
+      "Node": "RestrictedCpuset",
       "Duration": 0,
-      "Value": "850000"
-    },
-    {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "CPUBigClusterMinFreq",
-      "Duration": 0,
-      "Value": "1000000"
+      "Value": "0-3"
     }
   ]
 }
