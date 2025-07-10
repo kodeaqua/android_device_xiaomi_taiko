@@ -114,6 +114,9 @@ PRODUCT_PACKAGES += \
     sensors.xiaomi \
     vendor.xiaomi.hardware.fx.tunnel@1.0.vendor:64
 
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.sensors.xiaomi.udfps=true
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
