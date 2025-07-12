@@ -22,7 +22,6 @@ PRODUCT_MODEL := emerald
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="emerald-user 14 UP1A.231005.007 V816.0.5.0.UFOMIXM release-keys" \
     BuildFingerprint=Redmi/emerald_global/emerald:14/UP1A.231005.007/V816.0.5.0.UFOMIXM:user/release-keys \
     SystemName=emerald_global \
