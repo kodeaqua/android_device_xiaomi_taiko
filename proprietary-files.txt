@@ -1228,11 +1228,6 @@ vendor/lib64/libforkexecwrap.so
 vendor/lib64/libifcutils_mtk.so
 vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
-# USB
-vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
-vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
-vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
-
 # Vibrator firmware
 vendor/firmware/aw8624_rtp.bin
 vendor/firmware/vibrator_firmware_aidl/0_click_P_RTP.bin;SYMLINK=vendor/firmware/0_click_P_RTP.bin
