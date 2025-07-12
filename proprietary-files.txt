@@ -880,6 +880,7 @@ vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so;SYM
 vendor/lib64/hw/mt6789/gralloc.common.so;SYMLINK=vendor/lib64/hw/gralloc.common.so
 vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.pq@2.15-impl.so
 vendor/lib64/hw/mt6789/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so
+vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
 vendor/lib64/libNoFpsActor.so
@@ -1206,6 +1207,17 @@ vendor/lib64/hw/sensors.mediatek.V2.0.so;SYMLINK=vendor/lib64/hw/sensors.mt6789.
 vendor/lib64/libhfmanager.so
 vendor/lib64/libhwm.so
 vendor/lib64/libksensor.so
+
+# Citsensor
+vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
+vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
+vendor/etc/permissions/vendor.xiaomi.sensor.citsensorservice.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
+vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
+vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
+vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
+vendor/lib64/libssccalapi@2.0.so
+vendor/lib64/libhfmanagerwrapper.so
 
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
