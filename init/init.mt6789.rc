@@ -137,6 +137,23 @@ on post-fs-data
     chown root system /data/vendor/camera_dump
     chmod 0771 /data/vendor/camera_dump
 
+    #XIAOMI: Create camera directory for calibration file --start
+    mkdir mnt/vendor/persist/camera
+    chown system cameraserver mnt/vendor/persist/camera
+    chmod 755 mnt/vendor/persist/camera
+
+    mkdir /data/vendor/camera
+    chown root system /data/vendor/camera
+    chmod 0771 /data/vendor/camera
+
+    mkdir /data/vendor/camera/offlinelog 0777 cameraserver audio
+    chmod 0666 /dev/camlog
+
+    chmod 755 /mnt/vendor/nvcfg/sensor
+    chmod +r /mnt/vendor/nvcfg/sensor/gyro_cali.json
+    chmod +r /mnt/vendor/nvcfg/sensor/gyro_bias.json
+    #XIAOMI: Create camera directory for calibration file --end
+
     #Create Camera Dip Debug Folder
     mkdir /data/vendor/dipdebug
     chown root system /data/vendor/dipdebug

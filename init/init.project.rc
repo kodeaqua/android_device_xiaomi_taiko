@@ -64,8 +64,7 @@ on post-fs-data
     chmod 0777 /data/vendor/camera/rear_dc_cal_wu.bin
     restorecon /mnt/vendor/persist/camera/rear_dc_cal_wd.bin
     restorecon /mnt/vendor/persist/camera/rear_dc_cal_wu.bin
-    mkdir /mnt/vendor/persist 0777 system camera
-    mkdir /mnt/vendor/persist/camera 0777 system camera
+    mkdir /mnt/vendor/persist 0777 system cameraserver
     chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wd.golden
     chmod 0777 /vendor/etc/camera/com.xiaomi.dcal.wu.golden
     chmod 0777 /vendor/etc/camera/golden_ov13b10_i_ov2180_i.bin
