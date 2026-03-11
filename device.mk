@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/emerald
+DEVICE_PATH := device/xiaomi/taiko
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 # Enable updating of APEXes
@@ -125,17 +125,8 @@ PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl.custom:64 \
     fastbootd
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi
-
-PRODUCT_PACKAGES += \
-    libudfpshandler \
-    sensors.xiaomi.v2 \
-    vendor.xiaomi.hardware.fx.tunnel@1.0.vendor:64
-
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.vendor.sensors.xiaomi.udfps=true
+# Product characteristics
+PRODUCT_CHARACTERISTICS := tablet
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -151,7 +142,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-V1-ndk_platform.vendor:64
 
 # Shipping API level
-PRODUCT_SHIPPING_API_LEVEL := 33
+PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Health
 PRODUCT_PACKAGES += \
@@ -172,10 +163,6 @@ PRODUCT_PACKAGES += \
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
-
-# IMS
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.mediatek.ims.xml
 
 # Keymint
 PRODUCT_PACKAGES += \
@@ -206,29 +193,9 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
 
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    Tag
-
-PRODUCT_PACKAGES += \
-    android.hardware.nfc-service.nxp
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.se.omapi.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.ese.xml \
-    frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
-
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResOverlayMT6789 \
-    TelephonyOverlayMT6789 \
     TetheringResOverlayMT6789 \
     SettingsOverlayMT6789 \
     SystemUIOverlayMT6789 \
@@ -245,22 +212,36 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.mt6789 \
-    fstab.mt6789.vendor_ramdisk \
-    fstab.zram \
-    init.batterysecret.rc \
+    init.insmod.sh \
+    init.pstore_blk.sh \
+
+PRODUCT_PACKAGES += \
+    fstab.enableswap \
+    factory_init.connectivity.common.rc \
+    factory_init.connectivity.rc \
+    factory_init.dcxo_nvram.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    init.aee.rc \
+    init.cgroup.rc \
+    init.connectivity.common.rc \
     init.connectivity.rc \
-    init.modem.rc \
     init.mt6789.rc \
-    init.mt6789.power.rc \
     init.mt6789.usb.rc \
     init.mtkgki.rc \
-    init.nfc.rc \
+    init.project.rc \
     init.sensor_2_0.rc \
-    ueventd.mt6789.rc
+    init_connectivity.rc \
+    meta_init.connectivity.common.rc \
+    meta_init.connectivity.rc \
+    meta_init.dcxo_nvram.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    meta_init.vendor.rc \
+    multi_init.rc \
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init/init.recovery.mt6789.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6789.rc
+    $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.enableswap
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -270,7 +251,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.faketouch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.faketouch.xml \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
@@ -391,4 +371,4 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/emerald/emerald-vendor.mk)
+$(call inherit-product, vendor/xiaomi/taiko/taiko-vendor.mk)

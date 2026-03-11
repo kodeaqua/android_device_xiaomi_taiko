@@ -4,9 +4,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_emerald.mk
+    $(LOCAL_DIR)/lineage_taiko.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_emerald-user \
-    lineage_emerald-userdebug \
-    lineage_emerald-eng
+    lineage_taiko-user \
+    lineage_taiko-userdebug \
+    lineage_taiko-eng

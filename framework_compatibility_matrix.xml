@@ -21,13 +21,6 @@
             <instance>se2</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>android.hardware.vibrator</name>
-        <interface>
-            <name>IVibrator</name>
-            <instance>vibratorfeature</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.bluetooth.audio</name>
         <version>2.0-2</version>
@@ -121,31 +114,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.mediatek.hardware.mtkradioex</name>
-        <version>3.0</version>
-        <interface>
-            <name>IMtkRadioEx</name>
-            <instance>imsSlot1</instance>
-            <instance>imsSlot2</instance>
-            <instance>mtkAssist1</instance>
-            <instance>mtkAssist2</instance>
-            <instance>mtkCap1</instance>
-            <instance>mtkCap2</instance>
-            <instance>mtkEm1</instance>
-            <instance>mtkEm2</instance>
-            <instance>mtkRcs1</instance>
-            <instance>mtkRcs2</instance>
-            <instance>mtkRsu1</instance>
-            <instance>mtkRsu2</instance>
-            <instance>mtkSe1</instance>
-            <instance>mtkSe2</instance>
-            <instance>mtkSlot1</instance>
-            <instance>mtkSlot2</instance>
-            <instance>mtkSmartRatSwitch1</instance>
-            <instance>mtkSmartRatSwitch2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.mediatek.hardware.neuropilot.agent</name>
         <version>1.0-2</version>
         <interface>
@@ -185,18 +153,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>com.fingerprints.extension</name>
-        <version>3.0</version>
-        <interface>
-           <name>IFingerprintSensorTest</name>
-           <instance>default</instance>
-        </interface>
-        <interface>
-           <name>IFingerprintNavigation</name>
-           <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.sensor.citsensorservice</name>
         <transport>hwbinder</transport>
@@ -220,13 +176,6 @@
         <version>1.0</version>
         <interface>
             <name>IMiFxTunnel</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.nxp.nxpnfc_aidl</name>
-        <interface>
-            <name>INxpNfc</name>
             <instance>default</instance>
         </interface>
     </hal>

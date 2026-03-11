@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/emerald
+DEVICE_PATH := device/xiaomi/taiko
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
@@ -70,7 +70,7 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 bootconfig
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Display
-TARGET_SCREEN_DENSITY := 450
+TARGET_SCREEN_DENSITY := 540
 
 # DTB
 BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
@@ -139,7 +139,7 @@ BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/vendor_dlkm/*.ko)
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := emerald
+TARGET_BOOTLOADER_BOARD_NAME := taiko
 TARGET_NO_BOOTLOADER := true
 
 # Platform
@@ -149,9 +149,12 @@ TARGET_BOARD_PLATFORM := mt6789
 TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB := //$(DEVICE_PATH):libperfmgr-ext-xiaomi
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+TARGET_ODM_DLKM_PROP += $(DEVICE_PATH)/properties/odm_dlkm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
+TARGET_SYSTEM_DLKM_PROP += $(DEVICE_PATH)/properties/system_dlkm.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/properties/vendor.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6789
@@ -203,4 +206,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
 # Inherit the proprietary files
-include vendor/xiaomi/emerald/BoardConfigVendor.mk
+include vendor/xiaomi/taiko/BoardConfigVendor.mk
