@@ -27,9 +27,29 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
 
+def lib_fixup_remap(replacement: str):
+    # Bump an AOSP AIDL interface the blobs link against to the version the
+    # lineage-23.2 base provides (older frozen version isn't in this base).
+    def _fixup(lib: str, partition: str, *args, **kwargs):
+        return replacement
+    return _fixup
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     ('vendor.mediatek.hardware.videotelephony@1.0',): lib_fixup_vendor_suffix,
+    # Blobs link older frozen AOSP AIDL versions than the lineage-23.2 base
+    # provides; remap each old version up to the base's current one.
+    tuple(f'android.hardware.graphics.common-V{v}-ndk' for v in range(1, 7)):
+        lib_fixup_remap('android.hardware.graphics.common-V7-ndk'),
+    tuple(f'android.hardware.sensors-V{v}-ndk' for v in range(1, 3)):
+        lib_fixup_remap('android.hardware.sensors-V3-ndk'),
+    # camera.common V2 is unfrozen dev in the lineage-23.2 base (only V1 frozen);
+    # prebuilts can't link unfrozen versions, so remap the camera blobs down to V1.
+    ('android.hardware.camera.common-V2-ndk',):
+        lib_fixup_remap('android.hardware.camera.common-V1-ndk'),
+    tuple(f'android.hardware.security.keymint-V{v}-ndk' for v in range(1, 4)):
+        lib_fixup_remap('android.hardware.security.keymint-V4-ndk'),
 }
 
 blob_fixups: blob_fixups_user_type = {

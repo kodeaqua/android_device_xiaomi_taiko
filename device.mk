@@ -105,8 +105,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.3-service \
-    android.hardware.memtrack-service.mediatek-mali
+    android.hardware.graphics.composer@2.3-service
 
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@4.0.vendor:64 \
@@ -138,8 +137,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss.measurement_corrections@1.1.vendor:64 \
     android.hardware.gnss.visibility_control@1.0.vendor:64 \
     android.hardware.gnss@1.1.vendor:64 \
-    android.hardware.gnss@2.1.vendor:64 \
-    android.hardware.gnss-V1-ndk_platform.vendor:64
+    android.hardware.gnss@2.1.vendor:64
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 35
@@ -166,9 +164,6 @@ PRODUCT_PACKAGES += \
 
 # Keymint
 PRODUCT_PACKAGES += \
-    android.hardware.security.keymint-V1-ndk_platform.vendor \
-    android.hardware.security.secureclock-V1-ndk_platform.vendor \
-    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
     android.hardware.security.rkp-V1-ndk.vendor \
     lib_android_keymaster_keymint_utils.vendor \
     libkeymint.vendor
@@ -309,8 +304,7 @@ PRODUCT_PACKAGES += \
 
 # Modules
 PRODUCT_PACKAGES += \
-    init.insmod.sh \
-    init.insmod.mt6789.cfg
+    init.insmod.sh
 
 # Secure Element
 PRODUCT_PACKAGES += \
@@ -345,7 +339,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
 # USB
-$(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,true)
+# hardware/mediatek (lineage-23.2) declares audio_accessory_supported as a bool
+# select() branch, so it must be set with the _bool setter (was string soong_config_set).
+$(call soong_config_set_bool,android_hardware_mediatek_usb,audio_accessory_supported,true)
 
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
@@ -353,8 +349,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-V1-ndk.vendor \
-    vibratorfeature-wrapper
+    android.hardware.vibrator-V1-ndk.vendor
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
