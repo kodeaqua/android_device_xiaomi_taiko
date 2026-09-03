@@ -22,7 +22,7 @@ PRODUCT_MODEL := taiko
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="taiko-user 16 BP2A.250605.031.A3 OS3.0.2.0.WOVMIXM release-keys" \
-    BuildFingerprint=Redmi/taiko_global/taiko:16/BP2A.250605.031.A3/OS3.0.2.0.WOVMIXM:user/release-keys \
+    BuildDesc="taiko-user 16 BP2A.250605.031.A3 OS3.0.302.0.WOVMIXM release-keys" \
+    BuildFingerprint=Redmi/taiko_global/taiko:16/BP2A.250605.031.A3/OS3.0.302.0.WOVMIXM:user/release-keys \
     SystemName=taiko_global \
     SystemDevice=taiko

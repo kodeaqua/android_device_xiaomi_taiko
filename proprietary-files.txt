@@ -1,4 +1,4 @@
-# Unpinned blobs from taiko-user 16 BP2A.250605.031.A3 OS3.0.2.0.WOVMIXM release-keys
+# Unpinned blobs from taiko-user 16 BP2A.250605.031.A3 OS3.0.302.0.WOVMIXM release-keys
 
 # Audio
 vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
