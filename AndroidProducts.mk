@@ -4,9 +4,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_taiko.mk
+    $(LOCAL_DIR)/custom_taiko.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_taiko-user \
-    lineage_taiko-userdebug \
-    lineage_taiko-eng
+    custom_taiko-bp4a-user \
+    custom_taiko-bp4a-userdebug \
+    custom_taiko-bp4a-eng
