@@ -603,7 +603,6 @@ vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.mitee.xml
 vendor/bin/hw/android.hardware.health-service.example
 vendor/bin/hw/vendor.xiaomi.hardware.micharge-service
 vendor/bin/fuelgauged
-vendor/etc/init/android.hardware.health-service.example.rc
 vendor/etc/init/fuelgauged_init.rc
 vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc
 vendor/etc/vintf/manifest/android.hardware.health-service.example.xml:vendor/etc/vintf/manifest/android.hardware.health-service.example.mediatek.xml
@@ -714,7 +713,6 @@ vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.x
 
 # Sensors
 vendor/bin/hw/android.hardware.sensors-service.multihal
-vendor/etc/init/android.hardware.sensors-service-multihal.rc
 
 # Sensors configs
 vendor/etc/sensors/hals.conf
@@ -773,8 +771,6 @@ vendor/etc/vintf/manifest/android.hardware.usb.gadget-aidl-service.mediatek.xml
 vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
-vendor/bin/wpa_cli
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml:vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.mediatek.xml
@@ -818,10 +814,7 @@ vendor/bin/audiocmdservice_atci
 vendor/bin/autobt
 vendor/bin/backlight_bin
 vendor/bin/bip_ap
-vendor/bin/blkdiscard
 vendor/bin/boardid_bin
-vendor/bin/boringssl_self_test32
-vendor/bin/boringssl_self_test64
 vendor/bin/bt_dump
 vendor/bin/charge_logger
 vendor/bin/color
@@ -836,7 +829,6 @@ vendor/bin/doeapp-memtester
 vendor/bin/doeapp-sat
 vendor/bin/dreport
 vendor/bin/dtc_vendor
-vendor/bin/dumpsys
 vendor/bin/eara_io_service
 vendor/bin/factory
 vendor/bin/ffu
@@ -844,9 +836,6 @@ vendor/bin/fidoca_mitee
 vendor/bin/fpsgo
 vendor/bin/frs
 vendor/bin/frs_intf
-vendor/bin/getfattr
-vendor/bin/getopt
-vendor/bin/hs20-osu-client
 vendor/bin/hypsys_vendor
 vendor/bin/initprop_bin
 vendor/bin/iwlist
@@ -870,19 +859,16 @@ vendor/bin/netdc
 vendor/bin/panelcolor_bin
 vendor/bin/rt5512_calibration
 vendor/bin/rttv_v2
-vendor/bin/setfattr
 vendor/bin/smartpa_nvtest
 vendor/bin/sns_sensors_test_and_cal
 vendor/bin/soterd
 vendor/bin/stp_dump3
 vendor/bin/tee-supplicant
 vendor/bin/test-nusensor
-vendor/bin/test-nusensors
 vendor/bin/thermal_core
 vendor/bin/thermal_intf
 vendor/bin/tidad_mitee
 vendor/bin/touch_boost
-vendor/bin/trusty-ut-ctrl
 vendor/bin/uart_launcher
 vendor/bin/userdata_setup
 vendor/bin/vendor.xiaomi.hardware.otrpagent2
@@ -890,15 +876,10 @@ vendor/bin/vsimd_mitee
 vendor/bin/wallpapercolor_bin
 vendor/bin/wifi_dump
 vendor/bin/wifitest
-vendor/etc/aidl/hfp/hfp_codec_capabilities.xml
 vendor/etc/aidl/hfp/hfp_codec_capabilities.xml_mtk
-vendor/etc/aidl/le_audio/aidl_audio_set_configurations.bfbs
 vendor/etc/aidl/le_audio/aidl_audio_set_configurations.bfbs_mtk
-vendor/etc/aidl/le_audio/aidl_audio_set_scenarios.bfbs
 vendor/etc/aidl/le_audio/aidl_audio_set_scenarios.bfbs_mtk
-vendor/etc/aidl/le_audio/aidl_default_audio_set_configurations.json
 vendor/etc/aidl/le_audio/aidl_default_audio_set_configurations.json_mtk
-vendor/etc/aidl/le_audio/aidl_default_audio_set_scenarios.json
 vendor/etc/apdb/APDB_MT6789___W2532
 vendor/etc/apdb/APDB_MT6789___W2532_ENUM
 vendor/etc/gralloc/cam.xml
@@ -925,7 +906,6 @@ vendor/etc/init/FastSwitch.rc
 vendor/etc/init/aee_aedv64_v2.rc
 vendor/etc/init/audiocmdservice_atci.rc
 vendor/etc/init/bootperf.rc
-vendor/etc/init/boringssl_self_test.rc
 vendor/etc/init/dcxo_nvram_init.rc
 vendor/etc/init/ddr_training.rc
 vendor/etc/init/display.rc
@@ -982,7 +962,6 @@ vendor/etc/init/vendor.xiaomi.hardware.vsimapp-miteeservice.rc
 vendor/etc/init/vendor.xiaomi.hw.touchfeature-service.rc
 vendor/etc/init/vendor.xiaomi.sensor.citsensorservice.aidl.rc
 vendor/etc/init/vgoservice.rc
-vendor/etc/init/vndservicemanager.rc
 vendor/etc/init/wallpapercolor.rc
 vendor/etc/mbrain/mbrain_passthrough_config.json
 vendor/etc/mbrain/mbrain_runtime_appiot_config.json
@@ -1023,7 +1002,6 @@ vendor/etc/seccomp_policy/mediaextractor.policy
 vendor/etc/seccomp_policy/mediaswcodec.policy
 vendor/etc/vintf/manifest/CommandService.xml
 vendor/etc/vintf/manifest/FastSwitch.xml
-vendor/etc/vintf/manifest/bluetooth_audio.xml
 vendor/etc/vintf/manifest/dms-service.xml
 vendor/etc/vintf/manifest/dumpstate-xiaomi.xml
 vendor/etc/vintf/manifest/lights-mtk-default.xml
@@ -1062,12 +1040,7 @@ vendor/etc/audio_framework_configuration.xml
 vendor/etc/audio_policy.conf
 vendor/etc/aurisys_config.xml
 vendor/etc/aurisys_config_adsp.xml
-vendor/etc/boringssl_self_test.no_zygote.rc
-vendor/etc/boringssl_self_test.zygote32.rc
-vendor/etc/boringssl_self_test.zygote64.rc
-vendor/etc/boringssl_self_test.zygote64_32.rc
 vendor/etc/breakwhiteapplist.xml
-vendor/etc/build_flags.json
 vendor/etc/cgroups.json
 vendor/etc/command.csv
 vendor/etc/cust_color_dsi_o84_35_02_0b_dsc_vdo.xml
@@ -1091,7 +1064,6 @@ vendor/etc/ecc_list_OP236.xml
 vendor/etc/ecc_list_preference.xml
 vendor/etc/factory.ini
 vendor/etc/fstab.emmc
-vendor/etc/fstab.enableswap
 vendor/etc/fstab.mt6789
 vendor/etc/fstb.cfg
 vendor/etc/init.insmod.mt6789.cfg
@@ -1101,7 +1073,6 @@ vendor/etc/mali_platform.config
 vendor/etc/misound_res.bin
 vendor/etc/misound_res_headphone.bin
 vendor/etc/misound_res_spk.bin
-vendor/etc/mkshrc
 vendor/etc/modules_table.csv
 vendor/etc/mpe.conf
 vendor/etc/mtk_platform_codecs_config.xml
