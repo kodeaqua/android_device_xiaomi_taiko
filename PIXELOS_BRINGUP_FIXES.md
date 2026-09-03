@@ -83,6 +83,37 @@ Removed the 29 corresponding entries (11 `vendor/bin/*` + 18 `vendor/etc/*`, inc
 `device/xiaomi/taiko/proprietary-files.txt` so re-running extract-utils does not
 re-add them. Blob files under `proprietary/` left in place (untracked, harmless).
 
+## 6. VINTF duplicate HAL instances (checkvintf --check-one)
+
+Build reached packaging, then `check_vintf_vendor` failed: HAL interface
+instances declared twice. Same root cause as #4 — `device.mk` moved these HALs
+to source-built impls but the blob set still shipped the old services +
+fragments + init.rc. Removed the blob duplicates:
+
+| Interface instance | kept (source, device.mk) | removed (blob) |
+|---|---|---|
+| `ISupplicant/default` | AOSP `wpa_supplicant` | `android.hardware.wifi.supplicant.mediatek.xml` |
+| hostapd `ISupplicant/default` | AOSP `hostapd` | `android.hardware.wifi.hostapd.mediatek.xml` |
+| `ILights/default` | `android.hardware.light-service.lineage` | `lights-mtk-default` (HAL + .xml + .rc) |
+| `IPower/default` | `android.hardware.power-service.lineage-libperfmgr` | `android.hardware.power` block trimmed out of `power-mediatek.xml` |
+| `IUsb/default` | `android.hardware.usb-service.mediatek` | `android.hardware.usb-aidl-service.mediatek` (HAL + .xml + .rc) |
+| `IUsbGadget/default` | `android.hardware.usb.gadget-service.mediatek` | `android.hardware.usb.gadget-aidl-service.mediatek` (HAL + .xml + .rc) |
+
+`android.hardware.power-service-mediatek.so` kept — it is a `shared_libs` dep of
+`vendor.mediatek.hardware.mtkpower-service.mediatek`, not the IPower impl.
+`power-mediatek.xml` kept (trimmed) for `vendor.mediatek.hardware.mtkpower
+IMtkPowerService/default`.
+
+## 7. VINTF compat: mtkpower AIDL missing from matrix (checkvintf --check-compat)
+
+`vendor.mediatek.hardware.mtkpower IMtkPowerService/default @3` (AIDL) was in the
+device manifest but not in any framework compatibility matrix. Added it to
+`device/xiaomi/taiko/framework_compatibility_matrix.xml` next to the existing
+`mtkpower_applist` AIDL entry.
+
+Result: `breakfast taiko && m pixelos` completes —
+`PixelOS_taiko-16.2-*.zip` (~2.1 GB).
+
 ---
 
 ## Deferred (needs a booted ROM to confirm what's actually used)
