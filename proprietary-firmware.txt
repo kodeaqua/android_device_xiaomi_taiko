@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from taiko-user 16 BP2A.250605.031.A3 OS3.0.302.0.WOVMIXM release-keys
+## are from taiko-user 16 BP2A.250605.031.A3 OS3.0.304.0.WOVMIXM release-keys
 
 dpm.img;AB
 gz.img;AB
