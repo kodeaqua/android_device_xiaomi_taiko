@@ -222,6 +222,14 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.mtkpower</name>
+        <version>3</version>
+        <interface>
+            <name>IMtkPowerService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
         <name>vendor.mediatek.hardware.mtkpower_applist</name>
         <version>3</version>
         <interface>
