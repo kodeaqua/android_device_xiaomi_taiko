@@ -235,7 +235,12 @@ PRODUCT_PACKAGES += \
     meta_init.vendor.rc \
     multi_init.rc \
 
+# First-stage mount fstab. The blob taiko-vendor.mk already copies fstab.mt6789
+# to /vendor/etc, but nothing put it in the vendor ramdisk's first_stage_ramdisk/
+# where GKI first-stage init reads it -> no fstab -> can't mount system/vendor
+# -> reboot loop (recovery too). Mirror the existing fstab.enableswap line below.
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/fstab.mt6789:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6789 \
     $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.enableswap
 
 # Permissions
